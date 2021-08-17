@@ -1,0 +1,73 @@
+@mixin container() {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+};
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin zero-style() {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  border-collapse: collapse;
+}
+
+@mixin btn() {
+  display: block;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border-radius: 30px;
+  cursor: pointer;
+  @include padding-left-right (5px, 5px);
+  @include padding-top-bottom (5px, 5px);
+  @include font-size (10px, 12px);
+  text-transform: uppercase;
+  color: $main-font-color;
+  background-color: $submit-btn-bg;
+  font-family: inherit;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffeb81;
+    transition: 0.3s;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+  }
+}
+
+@mixin link-btn() {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 45px 15px 45px;
+  @include fontpref (14px, 17px, 700);
+  color: $btn-font-color;
+  background-color: $btn-bg;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background-color: $btn-bg-hover-color;
+    transition: 0.3s;
+    color: $btn-font-color;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    transition: 0.1s;
+    @include bsh(0px,3px,1px,0,#151414,inset);
+  }
+}
