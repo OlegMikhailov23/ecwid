@@ -1,0 +1,364 @@
+@import "../mixin";
+@import "../variables";
+
+.main-header__info {
+  @include container();
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 57px 19px 45px;
+}
+
+.main-header__info__logo {
+  display: block;
+  font-size: 0;
+  width: 90px;
+  height: 70px;
+  padding-bottom: 1px;
+
+  & img {
+    overflow: hidden;
+  }
+}
+
+.main-header__info__list {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 20px;
+  flex-grow: 1;
+  padding-left: 13%;
+  flex-wrap: wrap;
+}
+
+.main-header__info__list__item:before {
+  @include pseudo();
+  top: 0;
+  left: -44px;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.main-header__info__list__item:nth-child(1) {
+  margin-right: 20%;
+}
+
+.main-header__info__list__item:nth-child(2) {
+  margin-right: 19%;
+}
+
+.main-header__info__list__item:nth-child(1):before {
+  background-image: url("../assets/icons/icon1.svg");
+}
+
+.main-header__info__list__item:nth-child(2):before {
+  background-image: url("../assets/icons/icon2.svg");
+}
+
+.main-header__info__list__item:nth-child(3):before {
+  background-image: url("../assets/icons/icon3.svg");
+}
+
+.main-header__info__list__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  & div {
+    width: 107px;
+    display: flex;
+    justify-content: space-around;
+  }
+  & a {
+    @include zero-style();
+    color: $main-font-color;
+  }
+}
+
+.main-header__info__bucket {
+  margin-top: 20px;
+  display: block;
+  font-size: 0;
+  width: 32px;
+  height: 30px;
+  background-image: url("../assets/icons/icon4.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+
+.main-header__wrapper {
+  position: relative;
+  @include container();
+  background-color: $background-color-1;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  min-height: 40px;
+  will-change: transform;
+  z-index: 1;
+}
+
+.main-header__logo--nav {
+  display: none;
+}
+
+nav {
+  width: 70%;
+  margin: 0 auto;
+}
+
+nav .main-header__menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include zero-style();
+
+  & a {
+    @include zero-style();
+    display: block;
+    @include fontpref(0.9rem, 19px, 700);
+    font-family: inherit;
+    color: $second-font-color;
+    transition: all 0.3s ease-out;
+    letter-spacing: 0.5px;
+  }
+}
+
+nav .main-header__menu-list a:hover {
+  color: $hover-font-color;
+
+  &::before {
+    background-color: $hover-font-color;
+    transition: all 0.3s ease-out;
+  }
+}
+
+nav .main-header__menu-list .main-header__menu-list__item__link--active {
+  position: relative;
+  color: #fafafa;
+}
+
+.main-header__menu-list__item__link--active::before {
+  @include pseudo();
+  bottom: -5px;
+  left: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: $background-color-1;
+}
+
+.modal-background {
+  display: none;
+}
+
+@media ($tablet-widths) {
+  .main-header__info__logo {
+    align-self: center;
+    width: 110px;
+    height: 100px;
+    background-size: 96%;
+    padding-bottom: 5px;
+  }
+
+  .main-header__info {
+    flex-direction: column;
+  }
+
+  .main-header__info__list {
+    justify-content: space-around;
+    padding-left: 0%;
+
+  }
+
+  .main-header__info__list__item:nth-child(1) {
+    margin-right: 0%;
+  }
+
+  .main-header__info__list__item:nth-child(2) {
+    margin-right: 0%;
+  }
+
+  .main-header__info__bucket {
+    position: absolute;
+    right: 15%;
+    top: 30px;
+    margin-top: 20px;
+    width: 32px;
+    height: 30px;
+  }
+
+  nav {
+    width: 95%;
+  }
+
+  nav .main-header__menu-list {
+    gap: 1.5rem;
+  }
+}
+
+@media ($mobile-widths) {
+  .main-header__info__list {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-header__info__list__item {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    & div {
+      margin: 0 auto;
+    }
+  }
+
+  .main-header__info__list__item:before {
+    top: 0;
+    left: 10%;
+  }
+
+  .main-header__wrapper {
+    padding-left: 10px;
+    z-index: 1;
+  }
+
+  .main-header__logo {
+    overflow: hidden;
+  }
+
+  .main-header__logo--nav {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+  }
+
+  nav {
+    position: absolute;
+    //padding-top: 30%;
+    top: 0;
+    min-width: 320px;
+    width: 100%;
+    height: auto;
+    right: -100%;
+    transition: all 0.3s ease-in-out;
+    //overflow-x: hidden;
+    display: none;
+    overflow-y: scroll;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 10;
+    height: 22px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .nav-toggle span {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 30px;
+    margin-bottom: 8px;
+    background-color: $second-font-color;
+    transition: all .25s;
+  }
+
+  .nav-toggle.open {
+    transform: rotate(90deg);
+  }
+
+  nav .main-header__menu-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+    & a {
+      @include fontpref(1em, 145%, 400);
+      font-family: inherit;
+      letter-spacing: 0.06rem;
+      margin-bottom: 10px;
+    }
+  }
+
+  .main-header__menu-list__item__link--active::before {
+    height: 3px;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  nav.collapse {
+    display: flex;
+    //position: fixed;
+    flex-direction: column;
+    padding-bottom: 5%;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    background-color: $background-color-1;
+    animation: 0.2s fadeInRight ease;
+  }
+
+  nav.closed {
+    display: flex;
+    animation: 0.25s fadeInLeft ease;
+  }
+
+  .modal-background {
+    display: none;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(41, 41, 41, 0.6);
+    z-index: 0;
+    @include transit(all, .2s, linear);
+  }
+
+  .modal-background-show {
+    display: block;
+    @include transit(all, .2s, linear);
+  }
+}

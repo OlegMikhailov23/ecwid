@@ -1,4 +1,9 @@
 import 'normalize.css';
 import '../sass/style.scss';
 
-console.log("Hello from webpack:)");
+import Nav from "./components/nav";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = new Nav();
+    nav.init();
+});
