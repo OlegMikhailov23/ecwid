@@ -1,6 +1,6 @@
 import render from "../helper.render";
 import markup from "../markup";
-class Nav {
+class Header {
     constructor() {
         this.hamburgerButton = null;
         this.navMenu = null;
@@ -36,7 +36,7 @@ class Nav {
 
     init() {
         const container = document.querySelector('body');
-        render(container, markup.markupHeader.createHeader());
+        render(container, markup.createHeader());
         this.setElements();
 
         this.closeNavHandler(this.navMenuLink);
@@ -58,4 +58,4 @@ class Nav {
     }
 }
 
-export default Nav;
+export default Header;
