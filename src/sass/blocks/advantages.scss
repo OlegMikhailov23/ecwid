@@ -1,0 +1,76 @@
+@import "../mixin";
+@import "../variables";
+
+.advantages-wrapper {
+  @include container();
+  margin-top: 65px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 60px;
+  padding-right: 60px;
+  flex-wrap: wrap;
+}
+
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & img {
+    width: 132px;
+    height: 90px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  & span {
+    font-size: 14px;
+    line-height: 19px;
+    color: $third-font-color;
+    text-align: center;
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+}
+
+.advantages__item:nth-child(1) img {
+  width: 99px;
+  height: 79px;
+}
+
+.advantages__item:nth-child(2) img {
+  width: 74px;
+  height: 90px;
+}
+
+.advantages__item:nth-child(3) img {
+  width: 132px;
+  height: 90px;
+}
+
+.advantages__item:nth-child(4) img {
+  width: 65px;
+  height: 90px;
+}
+
+.advantages__item:nth-child(5) img {
+  width: 72px;
+  height: 90px;
+}
+
+@media ($tablet-widths) {
+  .advantages-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+
+  .advantages__item {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .advantages__item:last-child {
+    margin:  0 auto;
+  }
+}
